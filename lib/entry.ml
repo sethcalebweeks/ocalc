@@ -22,6 +22,7 @@ let rec step : expr -> expr = function
   | Binop (bop, e1, e2) -> Binop (bop, step e1, e2)
 and step_bop bop v1 v2 = match bop, v1, v2 with
   | Add, Int a, Int b -> Int (a + b)
+  | Mult, Int a, Int b -> Int (a * b)
   | _ -> failwith "precondition violated"
 
 let rec eval (e: expr) : expr = 
