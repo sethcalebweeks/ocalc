@@ -1,0 +1,3 @@
+(test
+ (name ocalc)
+ (libraries ocalc ounit2))
